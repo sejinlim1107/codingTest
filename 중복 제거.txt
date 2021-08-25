@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        s = s.toUpperCase();
+
+        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
+        for(int i=0;i<s.length();i++){
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);
+        }
+    }
+}
