@@ -1,0 +1,36 @@
+//제곱근 이용
+
+boolean prime = false;
+
+for(int i=M; i<=N; i++){
+	for(int j=2; j<=(int)Math.sqrt(i);j++){
+                if(i % j == 0){
+                    prime = false;
+                    break;
+                }
+                prime = true;
+         }
+         if(prime)
+                sb.append(i+"\n");
+         prime = true;
+}
+
+//에라토스테네스의 체 (대량의 소수를 한꺼번에 판별시 유리
+int [] isPrime = new int[N+1];
+
+for(int i=2;i<=N;i++){
+	isPrime[i] = i;
+}
+
+for(int i=2;i<=N;i++){
+	if(isPrime[i] == 0) continue;
+	for(int j=2*i;j<=N;j+=i){
+                isPrime[j] = 0;
+	}
+}
+
+for(int i=M;i<=N;i++){
+	if(isPrime[i] != 0){
+                sb.append(isPrime[i]+"\n");
+	}
+}
