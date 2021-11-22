@@ -1,0 +1,10 @@
+replaceAll()
+
+: String replaceAll(String s1, String s2)
+s1이 변환할 대상, s2가 변환할 문자 값
+
+백준 15881 문제에서 동기 언니가 푼 방식이 replaceAll이었다. 
+
+s.replaceAll("pPAp", "1").replaceAll("[^0-9]","");
+
+숫자가 아니면을 뜻하는 코드도 알아두면 좋을 것 같다!
